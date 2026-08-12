@@ -253,6 +253,8 @@ app.post(
           'X-Max-Init-Data'
         ) || '';
 
+        console.log('INIT DATA:', initData);
+        console.log('INIT DATA LENGTH:', initData.length);
 
       /*
         Если заказ должен приниматься
@@ -260,10 +262,7 @@ app.post(
       */
 
       if (
-        !validateInitData(
-          initData,
-          BOT_TOKEN
-        )
+        !validateInitData( initData, BOT_TOKEN)
       ) {
 
         return res
