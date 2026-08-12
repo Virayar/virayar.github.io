@@ -4,8 +4,6 @@ const state = {
 };
 const $ = s => document.querySelector(s);
 const wa = window.WebApp;
-console.log(wa?.initDataUnsafe?.user);
-alert('Ваш MAX ID: ' + wa?.initDataUnsafe?.user?.id);
 if (wa?.initDataUnsafe?.user?.first_name) {
   $('#hello').textContent =
     `${wa.initDataUnsafe.user.first_name}, добро пожаловать в наш каталог`;
