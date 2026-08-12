@@ -85,32 +85,32 @@ function render() {
               <span class="price">
                 ${money(p.price)}
               </span>
-              ${cartControl}
+              <div data-product-control="${p.id}">
+                ${cartControl}
+              </div>
             </div>
           </div>
         </article>
       `;
     }).join('') || '<p>Ничего не найдено</p>';
   /* Кнопка "+ В корзину" */
-  document.querySelectorAll('[data-add-id]').forEach(button => {
+  bindProductControls();
+}
+
+function bindProductControls(root = document) {
+  root.querySelectorAll('[data-add-id]').forEach(button => {
     button.addEventListener('click', () => {
-      changeQty(
-        button.dataset.addId,
-        1
-      );
+      changeQty(button.dataset.addId, 1);
     });
   });
-  /* Кнопки + и − прямо в каталоге */
-  document.querySelectorAll('[data-product-act]').forEach(button => {
+
+  root.querySelectorAll('[data-product-act]').forEach(button => {
     button.addEventListener('click', () => {
-      const delta =
-        button.dataset.productAct === 'plus'
+      const delta = button.dataset.productAct === 'plus'
           ? 1
           : -1;
-      changeQty(
-        button.dataset.id,
-        delta
-      );
+
+      changeQty(button.dataset.id, delta);
     });
   });
 }
@@ -119,15 +119,11 @@ function render() {
 ================================ */
 function changeQty(id, delta) {
   id = String(id);
-  const currentQuantity =
-    state.cart.get(id) || 0;
-  const newQuantity =
-    currentQuantity + delta;
+  const currentQuantity = state.cart.get(id) || 0;
+  const newQuantity = currentQuantity + delta;
+  
   if (newQuantity > 0) {
-    state.cart.set(
-      id,
-      newQuantity
-    );
+    state.cart.set(id,  newQuantity);
   } else {
     state.cart.delete(id);
   }
@@ -137,12 +133,56 @@ function changeQty(id, delta) {
    в каталоге и в корзине.
   */
   updateCart();
-  render();
+  updateProductControl(id);
+  
   try {
     wa?.HapticFeedback
       ?.impactOccurred
       ?.('light');
   } catch {}
+}
+
+function updateProductControl(id) {
+  const quantity = state.cart.get(String(id)) || 0;
+  const oldControl = document.querySelector( `[data-product-control="${id}"]` );
+
+  if (!oldControl) return;
+
+  if (quantity === 0) {
+    oldControl.innerHTML = `
+      <button
+        class="add"
+        data-add-id="${id}"
+      >
+        + В корзину
+      </button>
+    `;
+  } else {
+    oldControl.innerHTML = `
+      <div class="product-qty">
+        <span class="product-qty-number">${quantity}</span>
+
+        <button
+          type="button"
+          data-product-act="plus"
+          data-id="${id}"
+          aria-label="Добавить ещё"
+        >
+          +
+        </button>
+
+        <button
+          type="button"
+          data-product-act="minus"
+          data-id="${id}"
+          aria-label="Убавить"
+        >
+          −
+        </button>
+      </div>
+    `;
+  }
+  bindProductControls(oldControl);
 }
 /* ==============================
    КОРЗИНА
