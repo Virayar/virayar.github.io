@@ -335,7 +335,7 @@ $('#sendOrder').onclick =
     try {
       const response =
         await fetch(
-          'https://virayar-github-io.onrender.com',
+          'https://virayar-github-io.onrender.com/api/orders',
           {
             method: 'POST',
             headers: {
