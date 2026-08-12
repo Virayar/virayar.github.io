@@ -1,7 +1,7 @@
 const state={products:[],cart:new Map()}; const $=s=>document.querySelector(s);
 const wa=window.WebApp;
 if(wa?.initDataUnsafe?.user?.first_name) $('#hello').textContent=`${wa.initDataUnsafe.user.first_name}, добро пожаловать в наш каталог`;
-async function load(){state.products=await fetch('/products.json').then(r=>r.json());[...new Set(state.products.map(x=>x.category))].forEach(c=>$('#category').insertAdjacentHTML('beforeend',`<option>${c}</option>`));render()}
+async function load(){state.products=await fetch('./products.json').then(r=>r.json());[...new Set(state.products.map(x=>x.category))].forEach(c=>$('#category').insertAdjacentHTML('beforeend',`<option>${c}</option>`));render()}
 function money(n){return new Intl.NumberFormat('ru-RU').format(n)+' ₽'}
 function render(){const q=$('#search').value.toLowerCase(),cat=$('#category').value;const a=state.products.filter(p=>(!cat||p.category===cat)&&p.name.toLowerCase().includes(q));$('#products').innerHTML=a.map(p=>`<article class="product"><img src="${p.image}" alt="${p.name}"><div class="pad"><div class="tag">${p.category}</div><h3>${p.name}</h3><p class="desc">${p.description}</p><div class="row"><span class="price">${money(p.price)}</span><button class="add" data-id="${p.id}">+ В корзину</button></div></div></article>`).join('')||'<p>Ничего не найдено</p>';document.querySelectorAll('.add').forEach(b=>b.addEventListener('click',()=>add(b.dataset.id)))}
 function add(id){state.cart.set(id,(state.cart.get(id)||0)+1);updateCart(); try{wa?.HapticFeedback?.impactOccurred?.('light')}catch{}}
