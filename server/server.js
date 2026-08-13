@@ -174,7 +174,17 @@ function validateInitData(appData, botToken) {
 
   const params = appData
     .split('&')
-    .map(x => x.split('='));
+    .map(part => {
+      const index = part.indexOf('=');
+      
+      console.log('HASH RECEIVED:', originalHash[1]);
+      console.log('HASH CALCULATED:', calculatedHash);
+      
+      return [
+        part.slice(0, index),
+        part.slice(index + 1)
+      ];
+    });
 
   if (
     params.filter(x => x[0] === 'hash').length !== 1
