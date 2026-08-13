@@ -63,7 +63,7 @@ app.use(
    ПРОВЕРКА MAX INIT DATA
 ================================ */
 
-function validateInitData(data, token) {
+/*function validateInitData(data, token) {
 
   if (!data || !token) {
     return false;
@@ -166,8 +166,59 @@ function validateInitData(data, token) {
 
   }
 }
+*/
+function validateInitData(appData, botToken) {
+  if (!appData || !botToken) {
+    return false;
+  }
 
+  const params = appData
+    .split('&')
+    .map(x => x.split('='));
 
+  if (
+    params.filter(x => x[0] === 'hash').length !== 1
+  ) {
+    return false;
+  }
+
+  const originalHash =
+    params.find(x => x[0] === 'hash');
+
+  if (!originalHash || !originalHash[1]) {
+    return false;
+  }
+
+  // MAX требует URL-декодировать значения
+  for (const param of params) {
+    param[1] = decodeURIComponent(param[1]);
+  }
+
+  // Сортируем параметры по имени
+  params.sort(
+    (a, b) => a[0].localeCompare(b[0])
+  );
+
+  // Формируем строку для подписи
+  const launchParams = params
+    .filter(x => x[0] !== 'hash')
+    .map(x => `${x[0]}=${x[1]}`)
+    .join('\n');
+
+  // secret_key = HMAC-SHA256("WebAppData", BOT_TOKEN)
+  const secretKey = crypto
+    .createHmac('sha256', 'WebAppData')
+    .update(botToken)
+    .digest();
+
+  // hash = HMAC-SHA256(secret_key, launchParams)
+  const calculatedHash = crypto
+    .createHmac('sha256', secretKey)
+    .update(launchParams)
+    .digest('hex');
+
+  return calculatedHash === originalHash[1];
+}
 /* ==============================
    ПОЛУЧЕНИЕ USER ИЗ INIT DATA
 ================================ */
