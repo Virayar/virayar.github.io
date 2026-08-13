@@ -176,59 +176,68 @@ function validateInitData(appData, botToken) {
     .split('&')
     .map(part => {
       const index = part.indexOf('=');
-      
-      console.log('HASH RECEIVED:', originalHash[1]);
-      console.log('HASH CALCULATED:', calculatedHash);
-      
+
       return [
         part.slice(0, index),
         part.slice(index + 1)
       ];
     });
 
-  if (
-    params.filter(x => x[0] === 'hash').length !== 1
-  ) {
-    return false;
-  }
-
-  const originalHash =
-    params.find(x => x[0] === 'hash');
-
-  if (!originalHash || !originalHash[1]) {
-    return false;
-  }
-
-  // MAX требует URL-декодировать значения
-  for (const param of params) {
-    param[1] = decodeURIComponent(param[1]);
-  }
-
-  // Сортируем параметры по имени
-  params.sort(
-    (a, b) => a[0].localeCompare(b[0])
+  const hashParams = params.filter(
+    ([key]) => key === 'hash'
   );
 
-  // Формируем строку для подписи
-  const launchParams = params
-    .filter(x => x[0] !== 'hash')
-    .map(x => `${x[0]}=${x[1]}`)
+  if (hashParams.length !== 1) {
+    return false;
+  }
+
+  const originalHash = decodeURIComponent(
+    hashParams[0][1]
+  );
+
+  const dataCheckString = params
+    .filter(([key]) => key !== 'hash')
+    .map(([key, value]) => [
+      key,
+      decodeURIComponent(value)
+    ])
+    .sort((a, b) =>
+      a[0].localeCompare(b[0])
+    )
+    .map(([key, value]) =>
+      `${key}=${value}`
+    )
     .join('\n');
 
-  // secret_key = HMAC-SHA256("WebAppData", BOT_TOKEN)
   const secretKey = crypto
-    .createHmac('sha256', 'WebAppData')
+    .createHmac(
+      'sha256',
+      'WebAppData'
+    )
     .update(botToken)
     .digest();
 
-  // hash = HMAC-SHA256(secret_key, launchParams)
   const calculatedHash = crypto
-    .createHmac('sha256', secretKey)
-    .update(launchParams)
+    .createHmac(
+      'sha256',
+      secretKey
+    )
+    .update(dataCheckString)
     .digest('hex');
 
-  return calculatedHash === originalHash[1];
+  console.log(
+    'HASH RECEIVED:',
+    originalHash.slice(0, 8)
+  );
+
+  console.log(
+    'HASH CALCULATED:',
+    calculatedHash.slice(0, 8)
+  );
+
+  return calculatedHash === originalHash;
 }
+
 /* ==============================
    ПОЛУЧЕНИЕ USER ИЗ INIT DATA
 ================================ */
