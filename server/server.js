@@ -509,6 +509,26 @@ MAX user id: ${user.id || user.user_id || '—'}
 /* ==============================
    ЗАПУСК
 ================================ */
+app.get('/check-bot', async (req, res) => {
+  try {
+    const response = await fetch(
+      'https://platform-api2.max.ru/me',
+      {
+        headers: {
+          Authorization: BOT_TOKEN
+        }
+      }
+    );
+
+    const data = await response.json();
+
+    res.status(response.status).json(data);
+  } catch (error) {
+    res.status(500).json({
+      error: error.message
+    });
+  }
+});
 
 app.listen(
   PORT,
