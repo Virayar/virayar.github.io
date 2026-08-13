@@ -13,7 +13,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const PORT = process.env.PORT || 3000;
-const BOT_TOKEN = process.env.BOT_TOKEN;
+const BOT_TOKEN = process.env.BOT_TOKEN?.trim();
 const ADMIN_ID = process.env.ADMIN_ID;
 const FRONTEND_URL =
   process.env.FRONTEND_URL || 'https://virayar.github.io';
@@ -303,10 +303,10 @@ app.post(
         req.get(
           'X-Max-Init-Data'
         ) || '';
-
-        console.log('INIT DATA:', initData);
-        console.log('INIT DATA LENGTH:', initData.length);
-
+      
+        console.log('BOT TOKEN EXISTS:', Boolean(BOT_TOKEN));
+        console.log('BOT TOKEN LENGTH:', BOT_TOKEN?.length);
+        console.log('INIT DATA HAS HASH:', initData.includes('hash='));
       /*
         Если заказ должен приниматься
         ТОЛЬКО из MAX — оставляем эту проверку.
