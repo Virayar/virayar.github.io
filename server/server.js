@@ -174,39 +174,35 @@ function validateInitData(appData, botToken) {
 
   const params = appData
     .split('&')
-    .map(part => {
-      const index = part.indexOf('=');
+    .map(x => x.split('='));
 
-      return [
-        part.slice(0, index),
-        part.slice(index + 1)
-      ];
-    });
-
-  const hashParams = params.filter(
-    ([key]) => key === 'hash'
-  );
-
-  if (hashParams.length !== 1) {
+  if (
+    params.filter(x => x[0] === 'hash').length !== 1
+  ) {
     return false;
   }
 
-  const originalHash = decodeURIComponent(
-    hashParams[0][1]
+  const originalHash =
+    params.find(x => x[0] === 'hash');
+
+  if (
+    !originalHash ||
+    typeof originalHash[1] !== 'string'
+  ) {
+    return false;
+  }
+
+  for (const param of params) {
+    param[1] = decodeURIComponent(param[1]);
+  }
+
+  params.sort(
+    (a, b) => a[0].localeCompare(b[0])
   );
 
-  const dataCheckString = params
-    .filter(([key]) => key !== 'hash')
-    .map(([key, value]) => [
-      key,
-      decodeURIComponent(value)
-    ])
-    .sort((a, b) =>
-      a[0].localeCompare(b[0])
-    )
-    .map(([key, value]) =>
-      `${key}=${value}`
-    )
+  const launchParams = params
+    .filter(x => x[0] !== 'hash')
+    .map(x => `${x[0]}=${x[1]}`)
     .join('\n');
 
   const secretKey = crypto
@@ -222,12 +218,12 @@ function validateInitData(appData, botToken) {
       'sha256',
       secretKey
     )
-    .update(dataCheckString)
+    .update(launchParams)
     .digest('hex');
 
   console.log(
     'HASH RECEIVED:',
-    originalHash.slice(0, 8)
+    originalHash[1].slice(0, 8)
   );
 
   console.log(
@@ -235,7 +231,7 @@ function validateInitData(appData, botToken) {
     calculatedHash.slice(0, 8)
   );
 
-  return calculatedHash === originalHash;
+  return calculatedHash === originalHash[1];
 }
 
 /* ==============================
