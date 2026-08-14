@@ -23,14 +23,11 @@ const FRONTEND_URL =
    CORS
 ================================ 
 
-app.use(
-  cors({
+app.use( cors(
+  {
     origin: FRONTEND_URL,
     methods: ['GET', 'POST'],
-    allowedHeaders: [
-      'Content-Type',
-      'X-Max-Init-Data'
-    ]
+    allowedHeaders: [ 'Content-Type', 'X-Max-Init-Data' ]
   })
 );
 */
@@ -63,110 +60,6 @@ app.use(
    ПРОВЕРКА MAX INIT DATA
 ================================ */
 
-/*function validateInitData(data, token) {
-
-  if (!data || !token) {
-    return false;
-  }
-
-  const pairs = data
-    .split('&')
-    .map(part => {
-
-      const index =
-        part.indexOf('=');
-
-      return [
-        part.slice(0, index),
-        part.slice(index + 1)
-      ];
-
-    });
-
-
-  const hashPairs =
-    pairs.filter(
-      ([key]) => key === 'hash'
-    );
-
-
-  if (hashPairs.length !== 1) {
-    return false;
-  }
-
-
-  const originalHash =
-    decodeURIComponent(
-      hashPairs[0][1]
-    );
-
-
-  const dataCheckString =
-    pairs
-      .filter(
-        ([key]) => key !== 'hash'
-      )
-
-      .map(
-        ([key, value]) => [
-          key,
-          decodeURIComponent(value)
-        ]
-      )
-
-      .sort(
-        (a, b) =>
-          a[0].localeCompare(b[0])
-      )
-
-      .map(
-        ([key, value]) =>
-          `${key}=${value}`
-      )
-
-      .join('\n');
-
-
-  const secretKey =
-    crypto
-      .createHmac(
-        'sha256',
-        'WebAppData'
-      )
-      .update(token)
-      .digest();
-
-
-  const calculatedHash =
-    crypto
-      .createHmac(
-        'sha256',
-        secretKey
-      )
-      .update(dataCheckString)
-      .digest('hex');
-
-
-  try {
-
-    return crypto.timingSafeEqual(
-      Buffer.from(
-        originalHash,
-        'hex'
-      ),
-      Buffer.from(
-        calculatedHash,
-        'hex'
-      )
-    );
-
-  } catch {
-
-    return false;
-
-  }
-}
-*/
 function validateInitData(appData, botToken) {
   if (!appData || !botToken) {
     return false;
@@ -207,16 +100,6 @@ function validateInitData(appData, botToken) {
     .createHmac('sha256', secretKey)
     .update(dataCheckString)
     .digest('hex');
-
-  console.log(
-    'HASH RECEIVED:',
-    originalHash.slice(0, 8)
-  );
-
-  console.log(
-    'HASH CALCULATED:',
-    calculatedHash.slice(0, 8)
-  );
 
   return calculatedHash === originalHash;
 }
@@ -305,9 +188,6 @@ app.post(
           'X-Max-Init-Data'
         ) || '';
       
-        console.log('BOT TOKEN EXISTS:', Boolean(BOT_TOKEN));
-        console.log('BOT TOKEN LENGTH:', BOT_TOKEN?.length);
-        console.log('INIT DATA HAS HASH:', initData.includes('hash='));
       /*
         Если заказ должен приниматься
         ТОЛЬКО из MAX — оставляем эту проверку.
@@ -491,33 +371,6 @@ MAX user id: ${user.id || user.user_id || '—'}
 /* ==============================
    ЗАПУСК
 ================================ */
-app.get('/check-bot', async (req, res) => {
-  try {
-    const response = await fetch(
-      'https://platform-api2.max.ru/me',
-      {
-        headers: {
-          Authorization: BOT_TOKEN
-        }
-      }
-    );
-
-    const text = await response.text();
-
-    res
-      .status(response.status)
-      .type('application/json')
-      .send(text);
-
-  } catch (error) {
-    console.error('CHECK BOT ERROR:', error);
-
-    res.status(500).json({
-      error: error.message,
-      cause: error.cause?.message || null
-    });
-  }
-});
 
 app.listen(
   PORT,
