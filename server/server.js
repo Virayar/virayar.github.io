@@ -520,12 +520,19 @@ app.get('/check-bot', async (req, res) => {
       }
     );
 
-    const data = await response.json();
+    const text = await response.text();
 
-    res.status(response.status).json(data);
+    res
+      .status(response.status)
+      .type('application/json')
+      .send(text);
+
   } catch (error) {
+    console.error('CHECK BOT ERROR:', error);
+
     res.status(500).json({
-      error: error.message
+      error: error.message,
+      cause: error.cause?.message || null
     });
   }
 });
