@@ -277,6 +277,7 @@ ${lines}
 Имя: ${name || '—'}
 Контакт: ${contact || user.username || '—'}
 MAX user id: ${user.id || user.user_id || '—'}
+Покупатель: <a href="max://user/${user.id || user.user_id}">${user.first_name || 'Открыть профиль'}${user.last_name ? ' ' + user.last_name : ''}</a>
 Комментарий: ${comment || '—'}`;
 
 
@@ -284,12 +285,7 @@ MAX user id: ${user.id || user.user_id || '—'}
          ОТПРАВКА АДМИНУ В MAX
       ================================ */
 
-      const apiUrl =
-        'https://platform-api2.max.ru/messages' +
-        '?user_id=' +
-        encodeURIComponent(
-          ADMIN_ID
-        );
+      const apiUrl = 'https://platform-api2.max.ru/messages' + '?user_id=' + encodeURIComponent( ADMIN_ID );
 
 
       const maxResponse =
@@ -299,17 +295,12 @@ MAX user id: ${user.id || user.user_id || '—'}
             method: 'POST',
 
             headers: {
-              Authorization:
-                BOT_TOKEN,
-
-              'Content-Type':
-                'application/json'
+              Authorization: BOT_TOKEN,
+              'Content-Type': 'application/json'
             },
 
             body:
-              JSON.stringify({
-                text
-              })
+              JSON.stringify({ text, format: 'html' })
           }
         );
 
