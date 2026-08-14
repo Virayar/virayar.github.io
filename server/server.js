@@ -168,71 +168,57 @@ app.use(
 }
 */
 function validateInitData(appData, botToken) {
-  if (!appData || !botToken) return false;
-
-  const parts = appData.split('&');
-
-  const pairs = parts.map(part => {
-    const i = part.indexOf('=');
-    return [part.slice(0, i), part.slice(i + 1)];
-  });
-
-  const hashPair = pairs.find(([key]) => key === 'hash');
-
-  if (!hashPair) return false;
-
-  const originalHash = decodeURIComponent(hashPair[1]);
-
-  function makeHash(dataCheckString, reverseSecret = false) {
-    const secretKey = reverseSecret
-      ? crypto
-          .createHmac('sha256', botToken)
-          .update('WebAppData')
-          .digest()
-      : crypto
-          .createHmac('sha256', 'WebAppData')
-          .update(botToken)
-          .digest();
-
-    return crypto
-      .createHmac('sha256', secretKey)
-      .update(dataCheckString)
-      .digest('hex');
+  if (!appData || !botToken) {
+    return false;
   }
 
-  // Вариант 1 — официальный MAX:
-  // декодируем значения, затем сортируем
-  const decodedString = pairs
-    .filter(([key]) => key !== 'hash')
-    .map(([key, value]) => [
-      key,
-      decodeURIComponent(value)
-    ])
-    .sort((a, b) => a[0].localeCompare(b[0]))
-    .map(([key, value]) => `${key}=${value}`)
-    .join('\n');
+  const params = new URLSearchParams(appData);
 
-  // Вариант 2 — значения оставляем URL-кодированными
-  const rawString = pairs
-    .filter(([key]) => key !== 'hash')
-    .sort((a, b) => a[0].localeCompare(b[0]))
-    .map(([key, value]) => `${key}=${value}`)
-    .join('\n');
+  const hashes = params.getAll('hash');
 
-  const hashDecoded = makeHash(decodedString);
-  const hashRaw = makeHash(rawString);
-  const hashReversed = makeHash(decodedString, true);
+  if (hashes.length !== 1) {
+    return false;
+  }
 
-  console.log('PARAM KEYS:',
-    pairs.map(([key]) => key).join(', ')
+  const originalHash = hashes[0];
+
+  const launchParams = [];
+
+  for (const [key, value] of params.entries()) {
+    if (key !== 'hash') {
+      launchParams.push([key, value]);
+    }
+  }
+
+  launchParams.sort((a, b) =>
+    a[0].localeCompare(b[0])
   );
 
-  console.log('HASH RECEIVED:', originalHash.slice(0, 8));
-  console.log('HASH DECODED:', hashDecoded.slice(0, 8));
-  console.log('HASH RAW:', hashRaw.slice(0, 8));
-  console.log('HASH REVERSED:', hashReversed.slice(0, 8));
+  const dataCheckString = launchParams
+    .map(([key, value]) => `${key}=${value}`)
+    .join('\n');
 
-  return hashDecoded === originalHash;
+  const secretKey = crypto
+    .createHmac('sha256', 'WebAppData')
+    .update(botToken)
+    .digest();
+
+  const calculatedHash = crypto
+    .createHmac('sha256', secretKey)
+    .update(dataCheckString)
+    .digest('hex');
+
+  console.log(
+    'HASH RECEIVED:',
+    originalHash.slice(0, 8)
+  );
+
+  console.log(
+    'HASH CALCULATED:',
+    calculatedHash.slice(0, 8)
+  );
+
+  return calculatedHash === originalHash;
 }
 /* ==============================
    ПОЛУЧЕНИЕ USER ИЗ INIT DATA
