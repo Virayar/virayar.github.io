@@ -1,5 +1,5 @@
 {
-  "engines": {  "node": "22.x"  }
+  "engines": {  "node": "22.x"  },
   "name": "himalayan-cashmere-max-miniapp",
   "version": "1.0.0",
   "private": true,
