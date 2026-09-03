@@ -1,6 +1,18 @@
 [
-  {"id":"pashmina-indigo","name":"Палантин «Пряный Индиго»","category":"Палантины","price":5800,"currency":"₽","description":"Мягкий палантин из кашемира с глубоким индиговым оттенком.","image":"https://images.unsplash.com/photo-1601924994987-69e26d50dc26?auto=format&fit=crop&w=900&q=80","available":true},
-  {"id":"cashmere-mono","name":"Пушистик монотон","category":"Кашемир","price":5800,"currency":"₽","description":"Лёгкий однотонный кашемировый шарф с мягкой пушистой фактурой.","image":"https://images.unsplash.com/photo-1520903920243-00d872a2d1c9?auto=format&fit=crop&w=900&q=80","available":true},
-  {"id":"garnet-earrings","name":"Серьги с гранатом","category":"Украшения","price":3600,"currency":"₽","description":"Серебро и натуральный гранат. Небольшая авторская серия.","image":"https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=900&q=80","available":true},
-  {"id":"amethyst-choker","name":"Чокер с аметистом","category":"Украшения","price":8900,"currency":"₽","description":"Аметист, лабрадор и серебряные детали ручной работы.","image":"https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=900&q=80","available":true}
+  {
+    "id":"shelk-siam-roza",
+  "name": "\"Палитра Древнего Сиама\"",
+  "sku": "TAO-01",
+  "description": "Расцветка нежно-розовая, живая роза. Фактурный, может как держать объём, так и сжиматься в тонкую ленту. Мягкий, нежный, немного \"липкий\" шёлковый палантин с лёгким металлическим отблеском.",
+  "images": [    "https://static.tildacdn.com/stor3736-6363-4633-b734-316236623732/0ac9f32a3a61c501b5bafeaca0173cb6.jpg",
+    "https://static.tildacdn.com/stor3864-3735-4135-a663-343466313831/72770c34306265a9db7d6619b1feb047.jpg"  ],
+  "stock": 0,
+  "price": 3500,
+  "currency": "₽",
+  "category": "Шёлк"
+}
+
+  {"id":"shelk-siam-zoloto","name":"Палитра Древнего Сиама","category":"Шёлк","price":3500,"currency":"₽","description":"Лёгкий однотонный кашемировый шарф с мягкой пушистой фактурой.","image":"https://images.unsplash.com/photo-1520903920243-00d872a2d1c9?auto=format&fit=crop&w=900&q=80","available":true},
+  {"id":"shelk-siam-goluboi","name":"Палитра Древнего Сиама","category":"Шёлк","price":3500,"currency":"₽","description":"Серебро и натуральный гранат. Небольшая авторская серия.","image":"https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=900&q=80","available":true},
+  {"id":"shelk-siam-serebro","name":"Палитра Древнего Сиама","category":"Шёлк","price":3500,"currency":"₽","description":"Аметист, лабрадор и серебряные детали ручной работы.","image":"https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=900&q=80","available":true}
 ]
