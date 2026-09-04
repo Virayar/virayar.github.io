@@ -10,7 +10,7 @@
   "price": 3500,
   "currency": "₽",
   "category": "Шёлк"
-}
+},
 
   {"id":"shelk-siam-zoloto","name":"Палитра Древнего Сиама","category":"Шёлк","price":3500,"currency":"₽","description":"Лёгкий однотонный кашемировый шарф с мягкой пушистой фактурой.","image":"https://images.unsplash.com/photo-1520903920243-00d872a2d1c9?auto=format&fit=crop&w=900&q=80","available":true},
   {"id":"shelk-siam-goluboi","name":"Палитра Древнего Сиама","category":"Шёлк","price":3500,"currency":"₽","description":"Серебро и натуральный гранат. Небольшая авторская серия.","image":"https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=900&q=80","available":true},
