@@ -1,6 +1,17 @@
 [
   {
     "id":"shelk-siam-serebro",
+    "name": "\"Спрятанный Цветок\"",
+    "sku": "LES-02",
+    "description": "",
+    "image": "https://res.cloudinary.com/guxwakbt/image/upload/v1790926076/dhVIixJC7Sw.jpg",
+    "stock": 1,
+    "price": 3500,
+    "currency": "₽",
+    "category": "Шёлк"
+  },
+  {
+    "id":"shelk-siam-serebro",
     "name": "\"Палитра Древнего Сиама\"",
     "sku": "TAO-04",
     "description": "",
