@@ -126,12 +126,19 @@ return `
             <div class="tag">
               ${p.category}
             </div>
-            <h3>
+           <h3>
               ${p.name}
-            </h3>
-            <p class="desc">
+           </h3>
+
+          ${p.availability ? `
+            <div class="availability">
+              ${p.availability}
+            </div>
+              ` : ''}
+
+          <p class="desc">
               ${p.description}
-            </p>
+          </p>
             <div class="row">
               <span class="price">
                 ${money(p.price)}
