@@ -65,12 +65,63 @@ function render() {
             </button>
           </div>
         `;
-      return `
-        <article class="product">
+      const images = Array.isArray(p.images) && p.images.length
+  ? p.images
+  : p.image
+    ? [p.image]
+    : [];
+
+const gallery = images.length
+  ? `
+    <div class="product-gallery" data-gallery>
+      <div class="product-gallery-track">
+        ${images.map((image, index) => `
           <img
-            src="${p.image}"
+            src="${image}"
             alt="${p.name}"
+            class="product-gallery-image ${index === 0 ? 'active' : ''}"
+            data-gallery-image
           >
+        `).join('')}
+      </div>
+
+      ${images.length > 1 ? `
+        <button
+          type="button"
+          class="gallery-arrow gallery-prev"
+          data-gallery-prev
+          aria-label="Предыдущее фото"
+        >
+          ‹
+        </button>
+
+        <button
+          type="button"
+          class="gallery-arrow gallery-next"
+          data-gallery-next
+          aria-label="Следующее фото"
+        >
+          ›
+        </button>
+
+        <div class="gallery-dots">
+          ${images.map((_, index) => `
+            <button
+              type="button"
+              class="gallery-dot ${index === 0 ? 'active' : ''}"
+              data-gallery-dot="${index}"
+              aria-label="Фото ${index + 1}"
+            ></button>
+          `).join('')}
+        </div>
+      ` : ''}
+    </div>
+  `
+  : '';
+
+return `
+  <article class="product">
+    ${gallery}
           <div class="pad">
             <div class="tag">
               ${p.category}
@@ -95,7 +146,50 @@ function render() {
     }).join('') || '<p>Ничего не найдено</p>';
   /* Кнопка "+ В корзину" */
   bindProductControls();
+
+  /* Галереи фотографий */
+  bindProductGalleries();
 }
+
+function bindProductGalleries(root = document) {
+  root.querySelectorAll('[data-gallery]').forEach(gallery => {
+    const images = [...gallery.querySelectorAll('[data-gallery-image]')];
+    const dots = [...gallery.querySelectorAll('[data-gallery-dot]')];
+    const prev = gallery.querySelector('[data-gallery-prev]');
+    const next = gallery.querySelector('[data-gallery-next]');
+
+    if (images.length <= 1) return;
+
+    let current = 0;
+
+    function showImage(index) {
+      current = (index + images.length) % images.length;
+
+      images.forEach((image, i) => {
+        image.classList.toggle('active', i === current);
+      });
+
+      dots.forEach((dot, i) => {
+        dot.classList.toggle('active', i === current);
+      });
+    }
+
+    prev?.addEventListener('click', () => {
+      showImage(current - 1);
+    });
+
+    next?.addEventListener('click', () => {
+      showImage(current + 1);
+    });
+
+    dots.forEach(dot => {
+      dot.addEventListener('click', () => {
+        showImage(Number(dot.dataset.galleryDot));
+      });
+    });
+  });
+}
+
 
 function bindProductControls(root = document) {
   root.querySelectorAll('[data-add-id]').forEach(button => {
