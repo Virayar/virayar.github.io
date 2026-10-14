@@ -1,12 +1,23 @@
 [
   {
+    "id":"shelk-siam-serebro",
+    "name": "\"Палитра Древнего Сиама\"",
+    "sku": "TAO-04",
+    "description": "",
+    "image": "https://res.cloudinary.com/guxwakbt/image/upload/v1790926076/dhVIixJC7Sw.jpg",
+    "stock": 1,
+    "price": 3500,
+    "currency": "₽",
+    "category": "Шёлк"
+  }
+  {
     "id":"shelk-siam-kashtanoviy",
     "name": "\"Сладкие Каштаны\"",
     "sku": "TAO-07",
     "description": "🌰Каштаново-золотая — Правительница. Она занимает место. Не просит разрешения быть заметной, красивой, дорогой, сложной. И не уменьшает себя, чтобы рядом с ней кому-нибудь стало спокойнее./n/nНа шелке из Тайланда, это звучит особенно изящно. Цвет в меру спокойный, в меру насыщенный. Имеет прекрасное сочетание с повседневными цветами, такими как черный, серый, коричневый, зеленый и белый. Дает капельку лоска в образ, не отяжеляя его. Мягкая текстура нежно ложится и оберегает кожу от неприятных ощущений.",
     "image": "https://res.cloudinary.com/guxwakbt/image/upload/v1790921573/T7K9DAiwueU.jpg",
     "stock": 0,
-    "price": 3500,
+    "price": 2900,
     "currency": "₽",
     "category": "Шёлк"
   },
@@ -15,20 +26,9 @@
     "name": "\"Тропические Искры\"",
     "sku": "TAO-06",
     "description": "🔥Огненная — Дикая. Не в смысле необузданная, а в смысле — ещё не отредактированная чужими ожиданиями. Та женщина, которая помнит себя до бесконечных «так принято», «в твоём возрасте», «мужчинам нравится» и «женщина должна»./n/nПривет из таинственного Сиама. Сияние благородное, мягкое. Текстура нежнейшая и воздушная. Не колется, не царапает нежную кожу шеи. Дышащий и изысканный, легко драпируется в стильные волны на плечах.",
-    "image": "https://static.tildacdn.com/stor3736-6363-4633-b734-316236623732/0ac9f32a3a61c501b5bafeaca0173cb6.jpg",
+    "image": "https://res.cloudinary.com/guxwakbt/image/upload/v1790926464/a610ad81-9748-4cfb-9b18-bd404e63c5dc.jpg",
     "stock": 1,
-    "price": 3500,
-    "currency": "₽",
-    "category": "Шёлк"
-  },
-  {
-    "id":"shelk-siam-cherniy",
-    "name": "\"Сиамская Кошка\"",
-    "sku": "TAO-10",
-    "description": "",
-    "image": "https://static.tildacdn.com/stor3736-6363-4633-b734-316236623732/0ac9f32a3a61c501b5bafeaca0173cb6.jpg",
-    "stock": 1,
-    "price": 3500,
+    "price": 2900,
     "currency": "₽",
     "category": "Шёлк"
   },
@@ -37,7 +37,18 @@
     "name": "\"Шоколад\"",
     "sku": "TAO-08",
     "description": "",
-    "image": "https://static.tildacdn.com/stor3736-6363-4633-b734-316236623732/0ac9f32a3a61c501b5bafeaca0173cb6.jpg",
+    "image": "https://res.cloudinary.com/guxwakbt/image/upload/v1790926130/iKsI5DBSSZ4.jpg",
+    "stock": 1,
+    "price": 3500,
+    "currency": "₽",
+    "category": "Шёлк"
+  }
+  {
+    "id":"shelk-siam-cherniy",
+    "name": "\"Сиамская Кошка\"",
+    "sku": "TAO-10",
+    "description": "",
+    "image": "https://res.cloudinary.com/guxwakbt/image/upload/v1790925505/up1Uv4KMxow.jpg",
     "stock": 1,
     "price": 3500,
     "currency": "₽",
