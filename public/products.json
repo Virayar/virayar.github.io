@@ -1,14 +1,33 @@
 [
+    {
+    "id":"sherst-vishivka-beliy-knyaginya",
+    "name": "\"Спрятанный Цветок\"",
+    "sku": "EMB-07",
+    "description": "",
+    "image": "https://res.cloudinary.com/guxwakbt/image/upload/v1791956371/gFw-AHxmM774nP7CJj6prLwhtABARgKihreQsmeFZIgwSr29IqqloG90pt1i2pxRpx284dGOzvJ3gpyT6Ar_yjes.jpg",
+    "stock": 1,
+    "availability": "В НАЛИЧИИ",
+    "price": 18500,
+    "currency": "₽",
+    "category": "Кашемир"
+  },
   {
-    "id":"shelk-siam-serebro",
+    "id":"kashemir-les-grafit",
     "name": "\"Спрятанный Цветок\"",
     "sku": "LES-02",
     "description": "",
-    "image": "https://res.cloudinary.com/guxwakbt/image/upload/v1790926076/dhVIixJC7Sw.jpg",
+    "image": [
+                "https://res.cloudinary.com/guxwakbt/image/upload/v1791956379/FoaI9omcWBceg8G15fhIdO4sSbJmP10oENUhQl7qXfpV-EoJ3oN2zUU0qk8DYtHo2cMk4BSsGk4Y9RPVB5kjLkP2.jpg",
+                "https://res.cloudinary.com/guxwakbt/image/upload/v1791956380/sUCwDwzOlsEh28-oJN68VVIYhIWfcaHrRIpnDneyO7HNm8zZE68wnJaEcMC5ciAmWjMcFyQhVfuE62UFOxxp7pjP5AlqAA.jpg",
+                "https://res.cloudinary.com/guxwakbt/image/upload/v1791956375/C3qXUCHIG-3UJE-2sNsIiBvTP08YoKyRCvGRwLWZiPGmFVfmVby2yddRMYFu6a6luWIp5DMMFcCLhBEqgBvW8uJj.jpg",
+                "https://res.cloudinary.com/guxwakbt/image/upload/v1791956352/le_5sdp07psv-stUsefbcj7Dm27aRxq4om4mNuW7Nf9U99okh221Wlfj2lvCP72Rhth8UbST8gpdujcoNz2IfVS6.jpg",
+                "https://res.cloudinary.com/guxwakbt/image/upload/v1791956377/jDUJZ3wE3rD84yBDJvMt520lf8Y8xWgso444-lstl5-gnUI2wVtph7uB7kdxTeTpxH1b0D0z0YfUtORPbc2wLbrR.jpg"
+             ]
     "stock": 1,
-    "price": 3500,
+    "availability": "В НАЛИЧИИ",
+    "price": 10800,
     "currency": "₽",
-    "category": "Шёлк"
+    "category": "Кашемир"
   },
   {
     "id":"shelk-siam-serebro",
@@ -17,6 +36,7 @@
     "description": "",
     "image": "https://res.cloudinary.com/guxwakbt/image/upload/v1790926076/dhVIixJC7Sw.jpg",
     "stock": 1,
+    "availability": "В НАЛИЧИИ",
     "price": 3500,
     "currency": "₽",
     "category": "Шёлк"
@@ -27,7 +47,8 @@
     "sku": "TAO-07",
     "description": "🌰Каштаново-золотая — Правительница. Она занимает место. Не просит разрешения быть заметной, красивой, дорогой, сложной. И не уменьшает себя, чтобы рядом с ней кому-нибудь стало спокойнее.\n\nНа шелке из Тайланда, это звучит особенно изящно. Цвет в меру спокойный, в меру насыщенный. Имеет прекрасное сочетание с повседневными цветами, такими как черный, серый, коричневый, зеленый и белый. Дает капельку лоска в образ, не отяжеляя его. Мягкая текстура нежно ложится и оберегает кожу от неприятных ощущений.",
     "image": "https://res.cloudinary.com/guxwakbt/image/upload/v1790921573/T7K9DAiwueU.jpg",
-    "stock": 0,
+    "stock": 1,
+    "availability": "В НАЛИЧИИ",
     "price": 2900,
     "currency": "₽",
     "category": "Шёлк"
@@ -39,6 +60,7 @@
     "description": "🔥Огненная — Дикая. Не в смысле необузданная, а в смысле — ещё не отредактированная чужими ожиданиями. Та женщина, которая помнит себя до бесконечных «так принято», «в твоём возрасте», «мужчинам нравится» и «женщина должна»./n/nПривет из таинственного Сиама. Сияние благородное, мягкое. Текстура нежнейшая и воздушная. Не колется, не царапает нежную кожу шеи. Дышащий и изысканный, легко драпируется в стильные волны на плечах.",
     "image": "https://res.cloudinary.com/guxwakbt/image/upload/v1790926464/a610ad81-9748-4cfb-9b18-bd404e63c5dc.jpg",
     "stock": 1,
+    "availability": "В НАЛИЧИИ",
     "price": 2900,
     "currency": "₽",
     "category": "Шёлк"
@@ -50,6 +72,7 @@
     "description": "",
     "image": "https://res.cloudinary.com/guxwakbt/image/upload/v1790926130/iKsI5DBSSZ4.jpg",
     "stock": 1,
+    "availability": "В НАЛИЧИИ",
     "price": 3500,
     "currency": "₽",
     "category": "Шёлк"
@@ -61,6 +84,7 @@
     "description": "",
     "image": "https://res.cloudinary.com/guxwakbt/image/upload/v1790925505/up1Uv4KMxow.jpg",
     "stock": 1,
+    "availability": "В НАЛИЧИИ",
     "price": 3500,
     "currency": "₽",
     "category": "Шёлк"
