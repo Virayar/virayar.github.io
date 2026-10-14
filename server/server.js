@@ -15,6 +15,7 @@ const __dirname = path.dirname(__filename);
 const PORT = process.env.PORT || 3000;
 const BOT_TOKEN = process.env.BOT_TOKEN?.trim();
 const ADMIN_ID = process.env.ADMIN_ID;
+const ADMIN_ID_2 = process.env.ADMIN_ID_2;
 const FRONTEND_URL =
   process.env.FRONTEND_URL || 'https://virayar.github.io';
 
@@ -285,53 +286,57 @@ MAX user id: ${user.id || user.user_id || '—'}
          ОТПРАВКА АДМИНУ В MAX
       ================================ */
 
-      const apiUrl = 'https://platform-api2.max.ru/messages' + '?user_id=' + encodeURIComponent( ADMIN_ID );
+const adminIds = [...new Set(
+  [ADMIN_ID, ADMIN_ID_2].filter(Boolean)
+)];
 
+const results = await Promise.allSettled(
+  adminIds.map(async (adminId) => {
+    const apiUrl =
+      'https://platform-api2.max.ru/messages?user_id=' +
+      encodeURIComponent(adminId);
 
-      const maxResponse =
-        await fetch(
-          apiUrl,
-          {
-            method: 'POST',
+    const response = await fetch(apiUrl, {
+      method: 'POST',
+      headers: {
+        Authorization: BOT_TOKEN,
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        text,
+        format: 'html'
+      })
+    });
 
-            headers: {
-              Authorization: BOT_TOKEN,
-              'Content-Type': 'application/json'
-            },
-
-            body:
-              JSON.stringify({ text, format: 'html' })
-          }
-        );
-
-
-      const maxBody =
-        await maxResponse.text();
-
-
-      if (!maxResponse.ok) {
-
-        console.error(
-          'MAX API error:',
-          maxResponse.status,
-          maxBody
-        );
-
-        return res
-          .status(502)
-          .json({
-            error:
-              'MAX API не принял уведомление'
-          });
-
-      }
-
-
-      console.log(
-        'Новый заказ отправлен админу:',
-        ADMIN_ID
+    if (!response.ok) {
+      throw new Error(
+        `MAX API ${response.status}: ${await response.text()}`
       );
+    }
 
+    console.log('Заказ отправлен:', adminId);
+  })
+);
+
+const successful = results.filter(
+  result => result.status === 'fulfilled'
+).length;
+
+results.forEach((result, index) => {
+  if (result.status === 'rejected') {
+    console.error(
+      'Ошибка отправки получателю:',
+      adminIds[index],
+      result.reason
+    );
+  }
+});
+
+if (successful === 0) {
+  return res.status(502).json({
+    error: 'MAX API не принял уведомление'
+  });
+}
 
       return res.json({
         ok: true
