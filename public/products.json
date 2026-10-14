@@ -5,10 +5,10 @@
     "sku": "EMB-07",
     "description": "",
     "images": [
-                "https://res.cloudinary.com/guxwakbt/image/upload/kashemir-s-vishivkoq-belii-1.jpg"
-                "https://res.cloudinary.com/guxwakbt/image/upload/kashemir-s-vishivkoq-belii-2.jpg"
-                "https://res.cloudinary.com/guxwakbt/image/upload/kashemir-s-vishivkoq-belii-3.jpg"
-                "https://res.cloudinary.com/guxwakbt/image/upload/kashemir-s-vishivkoq-belii-4.jpg"
+                "https://res.cloudinary.com/guxwakbt/image/upload/kashemir-s-vishivkoq-belii-1.jpg",
+                "https://res.cloudinary.com/guxwakbt/image/upload/kashemir-s-vishivkoq-belii-2.jpg",
+                "https://res.cloudinary.com/guxwakbt/image/upload/kashemir-s-vishivkoq-belii-3.jpg",
+                "https://res.cloudinary.com/guxwakbt/image/upload/kashemir-s-vishivkoq-belii-4.jpg",
                 "https://res.cloudinary.com/guxwakbt/image/upload/kashemir-s-vishivkoq-belii-5.jpg"
                 ],
     "stock": 1,
@@ -23,10 +23,10 @@
     "sku": "LES-02",
     "description": "",
     "images": [
-                "https://res.cloudinary.com/guxwakbt/image/upload/kashemir-les-grafit-2.jpg"
-                "https://res.cloudinary.com/guxwakbt/image/upload/kashemir-les-grafit-1.jpg"
-                "https://res.cloudinary.com/guxwakbt/image/upload/kashemir-les-grafit-3.jpg"
-                "https://res.cloudinary.com/guxwakbt/image/upload/kashemir-les-grafit-4.jpg"
+                "https://res.cloudinary.com/guxwakbt/image/upload/kashemir-les-grafit-2.jpg",
+                "https://res.cloudinary.com/guxwakbt/image/upload/kashemir-les-grafit-1.jpg",
+                "https://res.cloudinary.com/guxwakbt/image/upload/kashemir-les-grafit-3.jpg",
+                "https://res.cloudinary.com/guxwakbt/image/upload/kashemir-les-grafit-4.jpg",
                 "https://res.cloudinary.com/guxwakbt/image/upload/kashemir-les-grafit-5.jpg"
              ],
     "stock": 1,
@@ -40,7 +40,13 @@
     "name": "\"Палитра Древнего Сиама\"",
     "sku": "TAO-04",
     "description": "",
-    "image": "https://res.cloudinary.com/guxwakbt/image/upload/v1790926076/dhVIixJC7Sw.jpg",
+    "images": [ 
+                "https://res.cloudinary.com/guxwakbt/image/upload/shelk-siam-serebro-1.jpg",
+                "https://res.cloudinary.com/guxwakbt/image/upload/shelk-siam-serebro-2.jpg",
+                "https://res.cloudinary.com/guxwakbt/image/upload/shelk-siam-serebro-3.jpg",
+                "https://res.cloudinary.com/guxwakbt/image/upload/shelk-siam-serebro-4.jpg",
+                "https://res.cloudinary.com/guxwakbt/image/upload/shelk-siam-serebro-5.jpg"
+                ],
     "stock": 1,
     "availability": "В НАЛИЧИИ",
     "price": 3500,
@@ -48,11 +54,17 @@
     "category": "Шёлк"
   },
   {
-    "id":"shelk-siam-kashtanoviy",
+    "id":"shelk-siam-kashtan",
     "name": "\"Сладкие Каштаны\"",
     "sku": "TAO-07",
     "description": "🌰Каштаново-золотая — Правительница. Она занимает место. Не просит разрешения быть заметной, красивой, дорогой, сложной. И не уменьшает себя, чтобы рядом с ней кому-нибудь стало спокойнее./n/nНа шелке из Тайланда, это звучит особенно изящно. Цвет в меру спокойный, в меру насыщенный. Имеет прекрасное сочетание с повседневными цветами, такими как черный, серый, коричневый, зеленый и белый. Дает капельку лоска в образ, не отяжеляя его. Мягкая текстура нежно ложится и оберегает кожу от неприятных ощущений.",
-    "image": "https://res.cloudinary.com/guxwakbt/image/upload/v1790921573/T7K9DAiwueU.jpg",
+    "images": [
+                "https://res.cloudinary.com/guxwakbt/image/upload/shelk-siam-kashtan-1.jpg",
+                "https://res.cloudinary.com/guxwakbt/image/upload/shelk-siam-kashtan-2.jpg",
+                "https://res.cloudinary.com/guxwakbt/image/upload/shelk-siam-kashtan-3.jpg",
+                "https://res.cloudinary.com/guxwakbt/image/upload/shelk-siam-kashtan-4.jpg",
+                "https://res.cloudinary.com/guxwakbt/image/upload/shelk-siam-kashtan-5.jpg"
+              ],
     "stock": 1,
     "availability": "В НАЛИЧИИ",
     "price": 2900,
@@ -60,11 +72,17 @@
     "category": "Шёлк"
   },
   {
-    "id":"shelk-siam-fire",
+    "id":"shelk-siam-ogonek",
     "name": "\"Тропические Искры\"",
     "sku": "TAO-06",
     "description": "🔥Огненная — Дикая. Не в смысле необузданная, а в смысле — ещё не отредактированная чужими ожиданиями. Та женщина, которая помнит себя до бесконечных «так принято», «в твоём возрасте», «мужчинам нравится» и «женщина должна»./n/nПривет из таинственного Сиама. Сияние благородное, мягкое. Текстура нежнейшая и воздушная. Не колется, не царапает нежную кожу шеи. Дышащий и изысканный, легко драпируется в стильные волны на плечах.",
-    "image": "https://res.cloudinary.com/guxwakbt/image/upload/v1790926464/a610ad81-9748-4cfb-9b18-bd404e63c5dc.jpg",
+    "images": [
+                "https://res.cloudinary.com/guxwakbt/image/upload/shelk-siam-ogonek-1.jpg",
+                "https://res.cloudinary.com/guxwakbt/image/upload/shelk-siam-ogonek-2.jpg",
+                "https://res.cloudinary.com/guxwakbt/image/upload/shelk-siam-ogonek-3.jpg",
+                "https://res.cloudinary.com/guxwakbt/image/upload/shelk-siam-ogonek-4.jpg",
+                "https://res.cloudinary.com/guxwakbt/image/upload/shelk-siam-ogonek-5.jpg"
+            ],
     "stock": 1,
     "availability": "В НАЛИЧИИ",
     "price": 2900,
@@ -72,11 +90,17 @@
     "category": "Шёлк"
   },
   {
-    "id":"shelk-siam-shokoladniy",
+    "id":"shelk-siam-shokolad",
     "name": "\"Шоколад\"",
     "sku": "TAO-08",
     "description": "",
-    "image": "https://res.cloudinary.com/guxwakbt/image/upload/v1790926130/iKsI5DBSSZ4.jpg",
+    "images": [
+                "https://res.cloudinary.com/guxwakbt/image/upload/shelk-siam-shokolad-1.jpg",
+                "https://res.cloudinary.com/guxwakbt/image/upload/shelk-siam-shokolad-2.jpg",
+                "https://res.cloudinary.com/guxwakbt/image/upload/shelk-siam-shokolad-3.jpg",
+                "https://res.cloudinary.com/guxwakbt/image/upload/shelk-siam-shokolad-4.jpg",
+                "https://res.cloudinary.com/guxwakbt/image/upload/shelk-siam-shokolad-5.jpg"
+    ],
     "stock": 1,
     "availability": "В НАЛИЧИИ",
     "price": 3500,
@@ -88,7 +112,13 @@
     "name": "\"Сиамская Кошка\"",
     "sku": "TAO-10",
     "description": "",
-    "image": "https://res.cloudinary.com/guxwakbt/image/upload/v1790925505/up1Uv4KMxow.jpg",
+    "images": [
+                "https://res.cloudinary.com/guxwakbt/image/upload/shelk-siam-cherniy-1.jpg",
+                "https://res.cloudinary.com/guxwakbt/image/upload/shelk-siam-cherniy-2.jpg",
+                "https://res.cloudinary.com/guxwakbt/image/upload/shelk-siam-cherniy-3.jpg",
+                "https://res.cloudinary.com/guxwakbt/image/upload/shelk-siam-cherniy-4.jpg",
+                "https://res.cloudinary.com/guxwakbt/image/upload/shelk-siam-cherniy-5.jpg"
+    ],
     "stock": 1,
     "availability": "В НАЛИЧИИ",
     "price": 3500,
