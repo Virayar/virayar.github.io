@@ -1,128 +1,95 @@
 [
     {
-    "id":"kashemir-s-vishivkoq-belii",
-    "name": "\"Белая Княгиня\"",
-    "sku": "EMB-07",
-    "description": "",
-    "images": [
-                "https://res.cloudinary.com/guxwakbt/image/upload/kashemir-s-vishivkoq-belii-1.jpg",
-                "https://res.cloudinary.com/guxwakbt/image/upload/kashemir-s-vishivkoq-belii-2.jpg",
-                "https://res.cloudinary.com/guxwakbt/image/upload/kashemir-s-vishivkoq-belii-3.jpg",
-                "https://res.cloudinary.com/guxwakbt/image/upload/kashemir-s-vishivkoq-belii-4.jpg",
-                "https://res.cloudinary.com/guxwakbt/image/upload/kashemir-s-vishivkoq-belii-5.jpg"
-                ],
-    "stock": 1,
-    "availability": "В НАЛИЧИИ",
-    "price": 18500,
-    "currency": "₽",
-    "category": "Кашемир"
-  },
-  {
-    "id":"kashemir-les-grafit",
-    "name": "\"Спрятанный Цветок\"",
-    "sku": "LES-02",
-    "description": "",
-    "images": [
-                "https://res.cloudinary.com/guxwakbt/image/upload/kashemir-les-grafit-2.jpg",
-                "https://res.cloudinary.com/guxwakbt/image/upload/kashemir-les-grafit-1.jpg",
-                "https://res.cloudinary.com/guxwakbt/image/upload/kashemir-les-grafit-3.jpg",
-                "https://res.cloudinary.com/guxwakbt/image/upload/kashemir-les-grafit-4.jpg",
-                "https://res.cloudinary.com/guxwakbt/image/upload/kashemir-les-grafit-5.jpg"
-             ],
-    "stock": 1,
-    "availability": "В НАЛИЧИИ",
-    "price": 10800,
-    "currency": "₽",
-    "category": "Кашемир"
-  },
-  {
-    "id":"shelk-siam-serebro",
-    "name": "\"Палитра Древнего Сиама\"",
-    "sku": "TAO-04",
-    "description": "",
-    "images": [ 
-                "https://res.cloudinary.com/guxwakbt/image/upload/shelk-siam-serebro-1.jpg",
-                "https://res.cloudinary.com/guxwakbt/image/upload/shelk-siam-serebro-2.jpg",
-                "https://res.cloudinary.com/guxwakbt/image/upload/shelk-siam-serebro-3.jpg",
-                "https://res.cloudinary.com/guxwakbt/image/upload/shelk-siam-serebro-4.jpg",
-                "https://res.cloudinary.com/guxwakbt/image/upload/shelk-siam-serebro-5.jpg"
-                ],
-    "stock": 1,
-    "availability": "В НАЛИЧИИ",
-    "price": 3500,
-    "currency": "₽",
-    "category": "Шёлк"
-  },
-  {
-    "id":"shelk-siam-kashtan",
-    "name": "\"Сладкие Каштаны\"",
-    "sku": "TAO-07",
-    "description": "",
-    "images": [
-                "https://res.cloudinary.com/guxwakbt/image/upload/shelk-siam-kashtan-1.jpg",
-                "https://res.cloudinary.com/guxwakbt/image/upload/shelk-siam-kashtan-2.jpg",
-                "https://res.cloudinary.com/guxwakbt/image/upload/shelk-siam-kashtan-3.jpg",
-                "https://res.cloudinary.com/guxwakbt/image/upload/shelk-siam-kashtan-4.jpg",
-                "https://res.cloudinary.com/guxwakbt/image/upload/shelk-siam-kashtan-5.jpg"
-              ],
-    "stock": 1,
-    "availability": "В НАЛИЧИИ",
-    "price": 2900,
-    "currency": "₽",
-    "category": "Шёлк"
-  },
-  {
-    "id":"shelk-siam-ogonek",
-    "name": "\"Тропические Искры\"",
-    "sku": "TAO-06",
-    "description": "",
-    "images": [
-                "https://res.cloudinary.com/guxwakbt/image/upload/shelk-siam-ogonek-1.jpg",
-                "https://res.cloudinary.com/guxwakbt/image/upload/shelk-siam-ogonek-2.jpg",
-                "https://res.cloudinary.com/guxwakbt/image/upload/shelk-siam-ogonek-3.jpg",
-                "https://res.cloudinary.com/guxwakbt/image/upload/shelk-siam-ogonek-4.jpg",
-                "https://res.cloudinary.com/guxwakbt/image/upload/shelk-siam-ogonek-5.jpg"
-            ],
-    "stock": 1,
-    "availability": "В НАЛИЧИИ",
-    "price": 2900,
-    "currency": "₽",
-    "category": "Шёлк"
-  },
-  {
-    "id":"shelk-siam-shokolad",
-    "name": "\"Шоколад\"",
-    "sku": "TAO-08",
-    "description": "",
-    "images": [
-                "https://res.cloudinary.com/guxwakbt/image/upload/shelk-siam-shokolad-1.jpg",
-                "https://res.cloudinary.com/guxwakbt/image/upload/shelk-siam-shokolad-2.jpg",
-                "https://res.cloudinary.com/guxwakbt/image/upload/shelk-siam-shokolad-3.jpg",
-                "https://res.cloudinary.com/guxwakbt/image/upload/shelk-siam-shokolad-4.jpg",
-                "https://res.cloudinary.com/guxwakbt/image/upload/shelk-siam-shokolad-5.jpg"
-    ],
-    "stock": 1,
-    "availability": "В НАЛИЧИИ",
-    "price": 3500,
-    "currency": "₽",
-    "category": "Шёлк"
-  },
-  {
-    "id":"shelk-siam-cherniy",
-    "name": "\"Сиамская Кошка\"",
-    "sku": "TAO-10",
-    "description": "",
-    "images": [
-                "https://res.cloudinary.com/guxwakbt/image/upload/shelk-siam-cherniy-1.jpg",
-                "https://res.cloudinary.com/guxwakbt/image/upload/shelk-siam-cherniy-2.jpg",
-                "https://res.cloudinary.com/guxwakbt/image/upload/shelk-siam-cherniy-3.jpg",
-                "https://res.cloudinary.com/guxwakbt/image/upload/shelk-siam-cherniy-4.jpg",
-                "https://res.cloudinary.com/guxwakbt/image/upload/shelk-siam-cherniy-5.jpg"
-    ],
-    "stock": 1,
-    "availability": "В НАЛИЧИИ",
-    "price": 3500,
-    "currency": "₽",
-    "category": "Шёлк"
-  }
+        "id":"suzani-roza",
+        "name": "\"Сюзани - Роза\"",
+        "sku": "ARI-11",
+        "description": "",
+        "images": [
+                    "https://res.cloudinary.com/guxwakbt/image/upload/suzani-roza-1.jpg",
+                    "https://res.cloudinary.com/guxwakbt/image/upload/suzani-roza-2.jpg",
+                    "https://res.cloudinary.com/guxwakbt/image/upload/suzani-roza-3.jpg"
+                  ],
+        "stock": 1,
+        "availability": "ПРЕДЗАКАЗ",
+        "price": 14500,
+        "currency": "₽",
+        "category": "Сюзани"
+    },
+    {
+        "id":"suzani-pudra",
+        "name": "\"Сюзани - Пудра\"",
+        "sku": "ARI-08",
+        "description": "",
+        "images": [
+                    "https://res.cloudinary.com/guxwakbt/image/upload/suzani-pudra-1.jpg",
+                    "https://res.cloudinary.com/guxwakbt/image/upload/suzani-pudra-2.jpg"
+                  ],
+        "stock": 1,
+        "availability": "ПРЕДЗАКАЗ",
+        "price": 13500,
+        "currency": "₽",
+        "category": "Сюзани"
+    },
+        {
+        "id":"suzani-drevo-zhizni",
+        "name": "\"Сюзани - Древо Жизни\"",
+        "sku": "ARI-10",
+        "description": "",
+        "images": [
+                    "https://res.cloudinary.com/guxwakbt/image/upload/suzani-drevo-zhizni-1.jpg",
+                    "https://res.cloudinary.com/guxwakbt/image/upload/suzani-drevo-zhizni-2.jpg"
+                 ],
+        "stock": 1,
+        "availability": "ПРЕДЗАКАЗ",
+        "price": 15500,
+        "currency": "₽",
+        "category": "Сюзани"
+    },
+    {
+        "id":"suzani-toplyonoe-moloko",
+        "name": "\"Сюзани - Топлёное Молоко\"",
+        "sku": "ARI-16",
+        "description": "",
+        "images": [
+                    "https://res.cloudinary.com/guxwakbt/image/upload/suzani-toplyonoe-moloko-1.jpg",
+                    "https://res.cloudinary.com/guxwakbt/image/upload/suzani-toplyonoe-moloko-2.jpg",
+                    "https://res.cloudinary.com/guxwakbt/image/upload/suzani-toplyonoe-moloko-3.jpg"
+                  ],
+        "stock": 1,
+        "availability": "ПРЕДЗАКАЗ",
+        "price": 14500,
+        "currency": "₽",
+        "category": "Сюзани"
+    },
+    {
+        "id":"suzani-bordo",
+        "name": "\"Сюзани - Золотые Хризантемы\"",
+        "sku": "ARI-17",
+        "description": "",
+        "images": [
+                    "https://res.cloudinary.com/guxwakbt/image/upload/suzani-bordo-1.jpg",
+                    "https://res.cloudinary.com/guxwakbt/image/upload/suzani-bordo-2.jpg",
+                    "https://res.cloudinary.com/guxwakbt/image/upload/suzani-bordo-3.jpg"
+                  ],
+        "stock": 1,
+        "availability": "ПРЕДЗАКАЗ",
+        "price": 15000,
+        "currency": "₽",
+        "category": "Сюзани"
+    },
+    {
+        "id":"suzani-pshenica",
+        "name": "\"Сюзани - Пшеница\"",
+        "sku": "ARI-18",
+        "description": "",
+        "images": [
+                    "https://res.cloudinary.com/guxwakbt/image/upload/suzani-pshenica-1.jpg",
+                    "https://res.cloudinary.com/guxwakbt/image/upload/suzani-pshenica-2.jpg"
+                  ],
+        "stock": 1,
+        "availability": "ПРЕДЗАКАЗ",
+        "price": 9000,
+        "currency": "₽",
+        "category": "Сюзани"
+    }
 ]
