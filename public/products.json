@@ -1,21 +1,5 @@
 [
     {
-        "id":"suzani-roza",
-        "name": "\"Сюзани - Роза\"",
-        "sku": "ARI-11",
-        "description": "",
-        "images": [
-                    "https://res.cloudinary.com/guxwakbt/image/upload/suzani-roza-1.jpg",
-                    "https://res.cloudinary.com/guxwakbt/image/upload/suzani-roza-2.jpg",
-                    "https://res.cloudinary.com/guxwakbt/image/upload/suzani-roza-3.jpg"
-                  ],
-        "stock": 1,
-        "availability": "ПРЕДЗАКАЗ",
-        "price": 14500,
-        "currency": "₽",
-        "category": "Сюзани"
-    },
-    {
         "id":"suzani-pudra",
         "name": "\"Сюзани - Пудра\"",
         "sku": "ARI-08",
