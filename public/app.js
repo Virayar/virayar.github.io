@@ -9,7 +9,12 @@ if (wa?.initDataUnsafe?.user?.first_name) {
     `${wa.initDataUnsafe.user.first_name}, добро пожаловать в наш каталог`;
 }
 async function load() {
-  state.products = await fetch('./products.json').then(r => r.json());
+  state.products = await fetch('./products.json', {
+    cache: 'no-store'
+  }).then(r => {
+    if (!r.ok) throw new Error(`Ошибка загрузки каталога: ${r.status}`);
+    return r.json();
+  });
   [...new Set(state.products.map(x => x.category))].forEach(c =>
     $('#category').insertAdjacentHTML(
       'beforeend',
